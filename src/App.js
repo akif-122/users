@@ -1,24 +1,91 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css"
+import userImg from "./assets/img/user.jpg"
+import User from "./components/User";
 function App() {
+
+  const userData = {
+    img: userImg,
+    heading: "This is Heading",
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+    variant: "light"
+  }
+
+  const usersData = [
+    {
+      img: userImg,
+      heading: "This is Heading",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+      direction: "row",
+      variant: "blue"
+    },
+    {
+      img: userImg,
+      heading: "This is Heading",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+      direction: "row",
+      variant: "blue"
+    },
+    {
+      img: userImg,
+      heading: "This is Heading",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+      direction: "row-reverse",
+      variant: "blue"
+    },
+    {
+      img: userImg,
+      heading: "This is Heading",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+      direction: "row-reverse",
+      variant: "blue"
+
+    },
+
+    {
+      img: userImg,
+      heading: "This is Heading",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+      direction: "row",
+      variant: "blue"
+    },
+    {
+      img: userImg,
+      heading: "This is Heading",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur numquam dolores aut obcaecati reprehender.",
+      direction: "row",
+      variant: "blue"
+    },
+
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section className="user">
+
+        <User userData={userData} />
+
+        <div className="row g-0">
+
+          {
+            usersData.map((data, index) => (
+              <div className="col-sm-6">
+                <User userData={data} md={true} />
+
+              </div>
+            ))
+          }
+
+
+
+
+        </div>
+
+
+
+
+      </section>
+    </>
   );
 }
 
